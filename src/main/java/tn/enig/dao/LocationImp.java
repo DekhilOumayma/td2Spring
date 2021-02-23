@@ -19,8 +19,13 @@ import tn.enig.model.Voiture;
 public class LocationImp implements ILocation{
 	
 	@Autowired
-	@Qualifier(value="datasource")
+	@Qualifier(value="data")
 	private DataSource data;
+	
+	public void setData(DataSource data) {
+		this.data = data;
+	}
+	
 	public void addClient(Client c) {
 		try
 		{
