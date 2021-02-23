@@ -34,7 +34,7 @@ public class LocationController {
     public String get2(Model m) {
 	Client c =new Client();
 		m.addAttribute("cl", c);
-		return "FormAjoutClient";
+		return "ajoutClient";
 }
 	@PostMapping("/saveClient")
     public String get3(Model m,@ModelAttribute("cl") Client c) {
@@ -55,11 +55,25 @@ public class LocationController {
 		m.addAttribute("c", c);
 		m.addAttribute("vts", vts);
 		m.addAttribute("clts", clts);
-				return "FormAjoutContrat";
+				return "ajoutContrat";
 }
 	@PostMapping("/saveContrat")
     public String get6(Model m,@ModelAttribute("c") Contrat c) {
          service.addContrat(c);
          return "redirect:/contracts";
 }
+	@GetMapping("/contrats")
+	public String get7(Model m) {
+		List<Contrat> listeContrats = service.getallContrat();
+		m.addAttribute("listeContrats", listeContrats);
+		return "ListContrats";
+
+	}
+	@GetMapping("/clients")
+	public String get8(Model m) {
+		List<Client> listeClients = service.getAllClient();
+		m.addAttribute("listeClients", listeClients);
+		return "ListClients";
+
+	}
 }

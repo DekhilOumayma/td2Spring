@@ -18,6 +18,9 @@
 			<h3>adress</h3><form:input path="adr"/><br>
 			<p></p><input type="submit" value="Ajouter">
 		</form:form>
+	<a href="addContrat">saisir contrat</a>
+	<a href="contrats">Liste des contrats</a>
+	<a href="clients">Liste des clients</a>
 </center>
 </body>
 </html>
